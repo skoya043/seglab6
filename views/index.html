@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+   <style>
+   @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body {
+  background: -webkit-linear-gradient(right, #ffcccc, pink);
+  background: -moz-linear-gradient(right, #ffcccc, pink);
+  background: -o-linear-gradient(right, #ffcccc, pink);
+  background: linear-gradient(to left, #ffcccc, pink);
+  font-family: "Roboto", sans-serif;
+     
+}
+
+.bold{
+  font-style: 
+}
+
+.left{
+  float: left;
+}
+
+.right{
+  float: right;
+}
+
+.imagecontainer {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-left: 310px;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  margin-left: 310px;
+  height: 100%;
+  margin-top: -312px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+}
+
+.imagecontainer:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+
+
+.slidecontainer {
+  display: flex;
+  margin-left: 90px;
+    flex-direction: row;
+}
+
+.slider {
+  margin: 0px 20px;
+}
+
+.radio{
+  width: 100%;
+}
+
+
+.titlecenter{
+text-align: center;
+font-size: 50px;
+font-weight: 20000;
+color: white;
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  border: solid;
+  border-color: grey;
+  border-width: thin;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input[type=text]{
+  width: 100%;
+}
+
+input[type=submit]{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #ff8080;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  color: white;
+  font-size: 17px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+input[type=submit]:hover{
+  background: #ff6666;
+
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 17px;
+  background-color: #ffb3b3;
+}
+</style>
+</head> 
+
+
+<h2 class='titlecenter'><b>Website Design Survey</b></h2>
+
+  <div id="main-container">
+
+    <br>
+    <br>
+
+  <div class="form">
+    <form id="form" name= "form" class="login-form">
+
+            <label for="colour"><b>What colour do you notice first?</b></label><br><br>
+      <div class="radio">
+        <input type="radio" id="white" name="colour" value="white">
+        <label for="white">White</label><br>
+        <input type="radio" id="green" name="colour" value="green">
+        <label for="green">Green</label><br>
+        <input type="radio" id="other" name="colour" value="other">
+        <label for="other">Other</label><br>
+      </div>
+      <br><br>
+
+      <div>
+        <label for="text"><b>Do you frequently visit this website? Yes/No.</b></label><br><br>
+        <input type="text" id="text" name="text" placeholder="Text goes here"><br>
+      </div><br><br>
+
+      <div>
+        <label for="UI"><b>Out of these options, what do you think the website does well?</b></label><br><br>
+        <input type="checkbox" id="navigate" name="UI" value="navigate">
+        <label for="navigate"> Easy to navigate</label><br>
+        <input type="checkbox" id="scheme" name="UI" value="scheme">
+        <label for="scheme"> Good colour scheme</label><br>
+        <input type="checkbox" id="layout" name="UI" value="layout">
+        <label for="layout"> Nice layout</label><br><br>
+      </div><br><br>
+
+      <div>
+        <label for="dropdown"><b>What was your least favourite aspect of the design?</b></label><br><br>
+        <select name="dropdown" id="dropdown">
+          <option value="cluttered">Too cluttered</option>
+          <option value="colour">Bad colour scheme</option>
+          <option value="inconsistency">Inconsistency</option>
+        </select> <br>
+      </div>
+      <br><br><br>
+
+      <div>
+        <label for="comments"><b>Do you have any comments or suggestions for this website?</b></label><br><br>
+        <textarea name="comments" rows="5" cols="30"></textarea><br>
+      </div>
+      <br><br><br>
+
+      <div>
+        <label for="likert"><b>On a scale of 1 to 10, how clearly do you think the website presents information?</b></label><br><br>
+        <div class="slidecontainer">
+        <p class="left">1</p>
+          <input name="likert" type="range" min="1" max="10" class="slider" id="myRange">
+         <p class="right">10</p>
+       </div>
+      </div>
+      <br><br>
+
+      <button formmethod="POST" id="submit" type="submit">Submit</button>
+    </form>
+  </div>
+      <script src="./action.js"></script>
+
+</div>
+
+<footer>
+  <p>Website designed by:
+   <b>Sreenija Koya</b>
+   </p>
+</footer>
+
+</body>
+</html>
